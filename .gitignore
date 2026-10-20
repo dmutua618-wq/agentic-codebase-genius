@@ -43,3 +43,5 @@ Thumbs.db
 
 # Generated Jac client configuration
 .jac/client/
+# Ignore Jac runtime artifacts at any directory depth
+**/.jac/
