@@ -1,0 +1,135 @@
+flowchart TD
+    START["Application architecture"]
+    N0["&lt;module&gt;"]
+    N1["check_compatibility"]
+    N2["_check_cryptography"]
+    N3["_ValidatedRequest"]
+    N4["PreparedRequest"]
+    N5["RequestKwargs"]
+    N6["BaseRequestKwargs"]
+    N7["GetKwargs"]
+    N8["PostKwargs"]
+    N9["DataKwargs"]
+    N10["BaseAdapter.__init__"]
+    N11["super.__init__"]
+    N12["HTTPAdapter"]
+    N13["BaseAdapter"]
+    N14["HTTPAdapter.__init__"]
+    N15["self.init_poolmanager"]
+    N16["HTTPAdapter.__setstate__"]
+    N17["HTTPAdapter.proxy_manager_for"]
+    N18["get_auth_from_url"]
+    N19["SOCKSProxyManager"]
+    N20["self.proxy_headers"]
+    N21["HTTPAdapter.build_response"]
+    N22["get_encoding_from_headers"]
+    N23["extract_cookies_to_jar"]
+    N24["HTTPAdapter.build_connection_pool_key_attributes"]
+    N25["_urllib3_request_context"]
+    N26["HTTPAdapter.get_connection_with_tls_context"]
+    N27["select_proxy"]
+    N28["self.build_connection_pool_key_attributes"]
+    N29["prepend_scheme_if_needed"]
+    N30["self.proxy_manager_for"]
+    N31["HTTPAdapter.get_connection"]
+    N32["HTTPAdapter.request_url"]
+    N33["urldefragauth"]
+    N34["HTTPAdapter.proxy_headers"]
+    N35["_basic_auth_str"]
+    N36["HTTPAdapter.send"]
+    N37["self.get_connection_with_tls_context"]
+    N38["self.cert_verify"]
+    N39["self.request_url"]
+    N40["self.add_headers"]
+    N41["self.build_response"]
+    N42["request"]
+    N43["session.request"]
+    N44["get"]
+    N45["options"]
+    N46["head"]
+    N47["post"]
+    N48["put"]
+    N49["patch"]
+    N50["delete"]
+    N51["to_native_string"]
+    N52["HTTPBasicAuth"]
+    N53["AuthBase"]
+    N54["HTTPBasicAuth.__call__"]
+    N55["HTTPProxyAuth"]
+    N56["HTTPProxyAuth.__call__"]
+    N57["HTTPDigestAuth"]
+    N58["HTTPDigestAuth.build_digest_header"]
+    N59["KD"]
+    N60["HTTPDigestAuth.handle_401"]
+    N61["parse_dict_header"]
+    N62["r.close"]
+    N63["prep.prepare_cookies"]
+    N64["self.build_digest_header"]
+    N65["r.connection.send"]
+    N66["HTTPDigestAuth.__call__"]
+    N67["self.init_per_thread_state"]
+    N68["r.register_hook"]
+    N69["_resolve_char_detection"]
+    N70["MockRequest.get_origin_req_host"]
+    N71["self.get_host"]
+    N0 -->|calls| N1
+    N0 -->|calls| N2
+    N4 -->|inherits| N3
+    N6 -->|inherits| N5
+    N6 -->|inherits| N7
+    N6 -->|inherits| N8
+    N6 -->|inherits| N9
+    N10 -->|calls| N11
+    N13 -->|inherits| N12
+    N14 -->|calls| N11
+    N14 -->|calls| N15
+    N16 -->|calls| N15
+    N17 -->|calls| N18
+    N17 -->|calls| N19
+    N17 -->|calls| N20
+    N21 -->|calls| N22
+    N21 -->|calls| N23
+    N24 -->|calls| N25
+    N26 -->|calls| N27
+    N26 -->|calls| N28
+    N26 -->|calls| N29
+    N26 -->|calls| N30
+    N31 -->|calls| N27
+    N31 -->|calls| N29
+    N31 -->|calls| N30
+    N32 -->|calls| N27
+    N32 -->|calls| N33
+    N34 -->|calls| N18
+    N34 -->|calls| N35
+    N36 -->|calls| N37
+    N36 -->|calls| N38
+    N36 -->|calls| N39
+    N36 -->|calls| N40
+    N36 -->|calls| N41
+    N42 -->|calls| N43
+    N44 -->|calls| N42
+    N45 -->|calls| N42
+    N46 -->|calls| N42
+    N47 -->|calls| N42
+    N48 -->|calls| N42
+    N49 -->|calls| N42
+    N50 -->|calls| N42
+    N35 -->|calls| N51
+    N53 -->|inherits| N52
+    N54 -->|calls| N35
+    N52 -->|inherits| N55
+    N56 -->|calls| N35
+    N53 -->|inherits| N57
+    N58 -->|calls| N59
+    N60 -->|calls| N61
+    N60 -->|calls| N62
+    N60 -->|calls| N23
+    N60 -->|calls| N63
+    N60 -->|calls| N64
+    N60 -->|calls| N65
+    N66 -->|calls| N67
+    N66 -->|calls| N64
+    N66 -->|calls| N68
+    N0 -->|calls| N69
+    N70 -->|calls| N71
+    NOTE["Diagram limited to 60 relationships"]

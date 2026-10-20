@@ -1,0 +1,45 @@
+
+# Python virtual environments
+.venv/
+venv/
+env/
+
+# Python generated files
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Jac runtime/cache/database artifacts
+.jac/cache/
+.jac/data/
+*.db
+*.db-shm
+*.db-wal
+
+# Environment secrets
+.env
+.env.*
+
+# Keep the example environment template
+!.env.example
+
+# Cloned repositories and generated output
+outputs/repositories/
+outputs/**/docs.md
+outputs/**/architecture.mmd
+
+# Editor and operating-system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+# Keep intentionally selected sample documentation
+!examples/
+!examples/requests_sample/
+!examples/requests_sample/docs.md
+!examples/requests_sample/architecture.mmd
+
+# Generated Jac client configuration
+.jac/client/
